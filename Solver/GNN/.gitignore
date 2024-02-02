@@ -1,0 +1,5 @@
+*.sh
+*.csv
+Pipfile*
+*.pdf 
+*.png

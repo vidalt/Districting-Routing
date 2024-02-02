@@ -1,0 +1,22 @@
+[[source]]
+url = "https://aws:eyJ2ZXIiOjEsImlzdSI6MTY3ODk5NDA5NywiZW5jIjoiQTEyOEdDTSIsInRhZyI6IkRHM0dNWkxJRUk3ZnBFNkVYVDFOX1EiLCJleHAiOjE2NzkwMzcyOTcsImFsZyI6IkExMjhHQ01LVyIsIml2IjoiWkhxY0l2RUNxZW1EOHpJUiJ9.Vqhi3KI-JNhd4aVuYwJpsA.Hf6eCapNUcWKcCiJ.OtGNkR0hZo2RntEQBZHL8uU0NxTsDcsQRx4Db5DJ6XQwqCKPoXXoUfgwl7K4j6R9EZtRkqRB9eVnr9vATapLlAcBMjk3d6yw2UfGwG2EvnVxx9P4qRie6qXLF7lODYYr0zkesZ80DlC7_iqcyvj-_HbzZLh_iVGE8segSWKM9fkDV9DN4KIg-AdAkDTzfNW1hXlERTfPAMNKJbeharvypl17o52KbV2LcsEzZDBhJ8nr1B_-DK8vg-7ij2xlamgovRuvpqOtTscxwisPZ7W3kzeqhOE3rBlq7Sw7w_VNmOyvKoEFi6ZNJR4d8UAlK9JpZklxfeO1AKXj3Fuh_RdJHdsBgbpqE43pfgR0ijQAUaoGQsNKppL-s7i8IzQmomb4jNv2fD1oLIJWwtH5nvqAyWJPGXiYo_pqF8NmXVcKDRfWRnMkQAXtrmjTEaTDKSjil9Q_SzsV--Juo3il0lmuDXVqGw6-Xn5_DMak1Bh29FvyJ70u1f6oHqTjthQ-f0gemqcmy8SXuS9FTZLKyeYkR0lowS_ZNLBL28BTbrwl60vHorxWbhtlh7iRQXgWGACroX4qt9dPz27CmfxgolG-gnbnmg3AUKCi18-EZeD97CBi7-p5XXPSQdeFpy-BnvIzB5hHqIf6_0neZVa1TBTp8afc-b9BVKi1IY5lq8zeuwuwO1w57h53TFW8VcSA5d224jwEQkU3jv_XB_5X7iN_8LYQQ2KiaDc4nQdQKFLDBV0BfSml6DwSj692A0vmw5qUeFq1S1BOIk3wczr31NVUiLf1T621CH-rbd7x8e7l8wDgc2I5GRC7EBV96F8HzX-BKaF3-YrhhL_jvt5OiqfNFDrrAFRiUOGwgl9JZHDoYJVBR_RcTih6ZDIWA_exB4MNP8wMyZ24S9hT1RsjOBkuDLJOJbqmdthRUl7-c_BC3ItKedWUSwfYHxEIpd2TUN-fHLMsDkbcd7uEz1wTOixHSb-dyAEXjMYHzTFqfZXXBuROH1k8UsyfxgmmxUxJgcb6TQbZZ1ztWGY6F2j9fmLhh58d1zx5Wc08BC5obgAPAHUfW7r8yIrdQqFbmYWdfFPvEOZJg3wBTKNZLpsb6CreWSwhJLh8lNmuCHwQw5B0ISEECnMIjoVVF7J1W1Kvdcf2lmsCTMeAMNu9Vu-g3EwD0V2mXS8cNCzjNnC6Vebi7aKz1eRg.bZ9_fa8szAcuWW2zM2hEqg@gpm-139818044667.d.codeartifact.us-east-1.amazonaws.com/pypi/GupyPackageManager/simple"
+verify_ssl = true
+name = "pip_conf_index_site"
+
+[packages]
+geojson = "==2.5.0"
+joblib = "==1.1.0"
+numpy = "==1.22.1"
+pandas = "==1.4.0"
+python-dateutil = "==2.8.2"
+pytz = "==2021.3"
+scikit-learn = "==1.0.1"
+scipy = "==1.7.3"
+six = "==1.16.0"
+sklearn = "==0.0"
+threadpoolctl = "==3.0.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
