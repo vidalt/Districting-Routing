@@ -33,9 +33,11 @@ public:
 	double perimeter = 0.0;								// Perimeter of the block
 	double density;										// Density of the block
 	double distDepot;		  			    			// Distance from each depot
+	double maxDistDepot;		  			    		// Max distance from each depot
+
 	double distReferencePoint;							// Distance from the reference point
-	map<int, double> averageCustomerDistanceTrain;				// Average Customers Distance to depot from train scenarios
-	map<int, double> averageCustomerDistanceTest;					// Average Customers Distance to depot from test scenarios
+	map<int, double> averageCustomerDistanceTrain;		// Average Customers Distance to depot from train scenarios
+	map<int, double> averageCustomerDistanceTest;		// Average Customers Distance to depot from test scenarios
 	
 	map<int, int> totalCustomersTrain;				
 	map<int, int> totalCustomersTest;					
@@ -52,6 +54,9 @@ public:
 
 	// Distance of a point to the closest point in the block
 	double distance(const Point & p1);
+
+	// Distance of a point to the farthest point in the block
+	double maxDistance(const Point & p1);
 
 	void calculateTrainTestAverageDepotDistance(const Point& depotPosition);
 };

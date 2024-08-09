@@ -250,7 +250,7 @@ void Params::exportJSONFile()
 
 void Params::exportBlockScenarios()
 {
-	vector<int> sizesOfInstance = vector<int> { 60, 90, 120, 150, 180, 240 };
+	vector<int> sizesOfInstance = vector<int> { 60, 90, 120 };
 
 	for (int instanceSize : sizesOfInstance)
 	{
@@ -287,14 +287,18 @@ void Params::exportBlockScenarios()
 			if (depotPosition == "SW") depotPoint = { minX, minY };
 			if (depotPosition == "SE") depotPoint = { maxX, minY };
 
+
+			auto temp = wgs84::fromCartesian({referenceLongLat[1], referenceLongLat[0]}, {1000. * depotPoint.x, 1000. * depotPoint.y});
+			array<double,2> depotLongLat = array<double,2> ({temp[1], temp[0]});
+
 			for (int nbBlock=0 ; nbBlock < currentBlocks.size(); nbBlock++)
 			{
 				Block* block = &currentBlocks[nbBlock];
 				block->distDepot = block->distance(depotPoint);
+				block->maxDistDepot = block->maxDistance(depotPoint);
+				block->calculateTrainTestAverageDepotDistance(depotPoint);
 			}
 
-			auto temp = wgs84::fromCartesian({referenceLongLat[1], referenceLongLat[0]}, {1000. * depotPoint.x, 1000. * depotPoint.y});
-			array<double,2> depotLongLat = array<double,2> ({temp[1], temp[0]});
 
 			for (pair<int, double> probaCustomer : probaCustomerDemandPerTargetSizeDistrict)
 			{
@@ -328,6 +332,13 @@ void Params::exportBlockScenarios()
 								{"SCENARIOS", isTrainFile? block.trainScenarios[targetSizeOfDistrict] : 
 														   block.testScenarios[targetSizeOfDistrict]},
 								{"DEPOT_DIST", block.distDepot},
+								{"MAX_DEPOT_DIST", block.maxDistDepot},
+								{"AVG_DEPOT_DIST", isTrainFile? block.averageCustomerDistanceTrain[targetSizeOfDistrict] :
+																block.averageCustomerDistanceTest[targetSizeOfDistrict] },
+								{"TOTAL_CUSTOMERS", isTrainFile? block.totalCustomersTrain[targetSizeOfDistrict] :
+																block.totalCustomersTest[targetSizeOfDistrict] },
+								{"AVG_NUM_CUSTOMERS", isTrainFile? block.averageCustomersTrain[targetSizeOfDistrict] :
+																block.averageCustomersTest[targetSizeOfDistrict] },
 							};
 							jblocks += jBlock;
 						}	
