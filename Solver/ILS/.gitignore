@@ -1,2 +1,5 @@
 scripts/
 districting_solver
+data/solutions/
+*.o
+*.pyc

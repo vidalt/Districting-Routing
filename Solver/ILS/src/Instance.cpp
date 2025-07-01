@@ -75,6 +75,8 @@ Instance::Instance(string instanceName)
 		maxSizeDistricts    = j.at("metadata").at("MAX_SIZE_DISTRICT");
 		numDistricts        = j.at("metadata").at("NUMBER_OF_DISTRICTS");
 
+		vector<double> depot = j.at("metadata").at("DEPOT_XY");
+		depotPoint = {depot[0], depot[1]};
 
 		for (auto &blockIN : j.at("blocks"))
 		{
@@ -85,6 +87,19 @@ Instance::Instance(string instanceName)
 
 				block->depotDistance = blockIN.at("DEPOT_DIST");
 				block->estimatedCostumers = block->nbInhabitants * probaCustomerDemand;
+
+				for (auto &scenario : blockIN.at("SCENARIOS"))
+				{
+					vector<Point> scenarioPoints = vector<Point>();
+					for (auto &point : scenario)
+					{
+						Point randomPoint = { point[0],  point[1]};
+						scenarioPoints.push_back(randomPoint);
+					}
+
+					blocks[blockId].trainScenarios.push_back(scenarioPoints);
+					break;
+				}
 			}
 		}
 	}

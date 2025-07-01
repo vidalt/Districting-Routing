@@ -24,4 +24,13 @@ private:
     string getEncodedSolution(vector<set<int>> districts, vector<int> districtsToEvaluate); // Format solution to format expected by server
 };
 
+class TSPCostEvaluator : public CostEvaluator
+{
+public:
+    double calculateCost(Solution *solution, vector<int> districtsToAvaliate = vector<int>()); // Implementation of cost evaluator interface, it only evaluates districts with id in districtsToAvaliate or evaluate all if list is empty
+    TSPCostEvaluator();
+private:
+    void generateTSPinstance(vector<Point> &points, Point depotPoint, string fileName);
+};
+
 #endif

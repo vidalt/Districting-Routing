@@ -2,6 +2,8 @@
 #define INSTANCE_H
 
 #include "Block.h"
+#include "Point.h"
+
 #include "functional"
 #include "random"
 #include <map>
@@ -28,6 +30,8 @@ public:
     int minSizeDistricts;    // Lower bound for size of District
     int targetSizeDistricts; // Target size of a District
     int maxSizeDistricts;    // Upper bound for size of District
+
+    Point depotPoint;							 // Point representing the depot in XY coordinates
 
     int numDistricts;          // Number of districts
     float probaCustomerDemand; // Probability of a inhabitant to have a demand
